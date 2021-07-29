@@ -1,5 +1,6 @@
 // 脚本执行
 
+// 同步任务
 console.log(1); // 1
 
 // 宏任务
@@ -13,13 +14,16 @@ const p = new Promise(resolve => {
     console.log(3); //5
     resolve();
   }, 1000);
+  // 同步任务
   console.log(4); //2
 });
 
+//微任务
 p.then(() => {
   console.log(5); //6
 });
 
+// 同步任务
 console.log(6); //3
 
 // 执行过程
